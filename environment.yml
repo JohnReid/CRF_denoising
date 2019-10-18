@@ -1,0 +1,11 @@
+name: CRF_denoising
+dependencies:
+  - chainer
+  - scipy==1.2.1
+  - matplotlib
+  - Pillow
+  - jupyter
+  - neovim
+  - pip
+  - pip:
+    - PyMaxflow
