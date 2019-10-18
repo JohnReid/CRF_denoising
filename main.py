@@ -13,7 +13,7 @@ Reference:
 import os
 import numpy as np
 import chainer.functions as F
-from tqdm import tqdm
+from tqdm import trange
 from chainer import Variable
 from scipy.misc import imread
 import matplotlib.pyplot as plt
@@ -163,10 +163,11 @@ lr = 0.0001  # learning rate
 # create model
 model = CRF()
 
+print('Training')
 training_loss = []
 for i in range(n_iter):
   idx = np.random.permutation(120)
-  for j in tqdm.range(120):
+  for j in trange(120):
     data = Variable(trainx[idx[j]].reshape((1, 64, 64)))
     label = Variable(trainy[idx[j]].reshape((1, 64, 64)))
     loss = model.ll(data, label)
