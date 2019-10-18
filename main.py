@@ -193,6 +193,7 @@ plt.xlim(1, n_iter*120)
 plt.xlabel('iteration')
 plt.ylabel('training loss')
 plt.title('learning curve')
+plt.savefig('learning-curve.svg')
 plt.show()
 
 
@@ -248,8 +249,10 @@ sgm = g.get_grid_segments(nodeids)
 rec_img = np.int_(sgm)
 plt.imshow(rec_img, cmap='gray')
 plt.title('denoised image')
+plt.savefig('denoised.svg')
 plt.show()
 
 plt.imshow(x[0], cmap='gray')
 plt.title('original image')
+plt.savefig('original.svg')
 plt.show()
