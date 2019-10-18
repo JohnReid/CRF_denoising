@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Created on Sat Mar  3 00:06:46 2018
@@ -11,8 +12,8 @@ Reference:
 
 import os
 import numpy as np
-#import chainer
 import chainer.functions as F
+from tqdm import tqdm
 from chainer import Variable
 from scipy.misc import imread
 import matplotlib.pyplot as plt
@@ -165,7 +166,7 @@ model = CRF()
 training_loss = []
 for i in range(n_iter):
   idx = np.random.permutation(120)
-  for j in range(120):
+  for j in tqdm.range(120):
     data = Variable(trainx[idx[j]].reshape((1, 64, 64)))
     label = Variable(trainy[idx[j]].reshape((1, 64, 64)))
     loss = model.ll(data, label)

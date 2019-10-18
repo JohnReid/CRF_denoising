@@ -4,6 +4,7 @@ dependencies:
   - scipy==1.2.1
   - matplotlib
   - Pillow
+  - tqdm
   - jupyter
   - neovim
   - pip
